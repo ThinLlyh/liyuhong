@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商品详情</title>
+</head>
+<link href="css/public.css" rel="stylesheet" type="text/css">
+<link href="css/detail.css" rel="stylesheet" type="text/css">
+<link href="css/index.css" rel="stylesheet" type="text/css">
+<link href="css/iconfont.css" rel="stylesheet" type="text/css">
+<style>
+   .menu_sort ul:nth-child(1){
+       background: #2e8ae4;
+   }
+    .menu_sort ul:nth-child(2){
+        background: pink;
+        height: 512px;
+        background: -webkit-linear-gradient(#3084e5, #18ebe2);
+        background: -ms-linear-gradient(#3084e5, #18ebe2);
+        background: -moz-linear-gradient(#3084e5, #18ebe2);
+        display: none;
+    }
+    .menu_sort ul:nth-child(1):hover .sort_ul{
+        display: block;
+    }
+</style>
+<body>
+<!--头部-->
+<div class="header">
+    <div class="head">
+        <div class="head_left">
+            <p>欢迎您，来到创维官方商城</p>
+        </div>
+        <div class="head_right">
+            <ul>
+                <li><a href="login.html">登录</a></li>
+                <li><a href="register.html">注册</a></li>
+                <li><a href="#">我的订单</a></li>
+                <li class="top_li_wrap"><a href="#">手机端
+                    <img class="top_img_nov" src="imgs/index/code.png"/>
+                    <p class="wx-tips">请使用微信扫描</p>
+                </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--搜索框-->
+<div id="top_wrap" class="top proCenTabOn">
+    <div class="top_content clearfixs">
+        <div class="top_logo">
+            <a href="#" target="_blank">
+                <img src="imgs/index/logo.png">
+            </a>
+        </div>
+        <div class="top_right">
+            <div class="top_search">
+                <div class="search_label">
+                    <input type="text" class="search_input" placeholder="输入条件">
+                </div>
+                <div class="search_input_icon">
+                    <input type="button" class="search_button">
+                    <span class="iconfont icon-search"></span>
+                </div>
+                <div class="search_nav">
+                    <a href="#" target="_blank">OLED</a>
+                    <a href="#" target="_blank">超薄</a>
+                    <a href="#" target="_blank">4K超清</a>
+                    <a href="#" target="_blank">全面屏</a>
+                    <a href="#" target="_blank">防蓝光护眼</a>
+                    <a href="#" target="_blank">大屏</a>
+                    <a href="#" target="_blank">智能网络</a>
+                </div>
+            </div>
+            <div class="top_shopCar">
+                <div class="shopCar_cen">
+                    <dl>
+                        <dt>
+                            <a href="#" target="_blank">
+                                <span class="iconfont icon-shop-cart"></span>
+                                我的购物车
+                            </a>
+                        </dt>
+                    </dl>
+                    <dd>
+                        <div class="shopCar_number">0</div>
+                    </dd>
+                    <div class="shop_list">
+                        <p>购物车列表
+                            <span class="closeCart iconfont icon-guanbi"></span>
+                        </p>
+                        <div class="shop_bottom">
+                            <span>共<b>0</b>件商品</span>
+                            <span>总计<b>￥0</b></span>
+                            <input type="button" value="去购物" class="goShopping">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--导航条-->
+<div class="nav clearfix">
+    <div class="nav_menu">
+        <div class="menu_sort">
+            <ul>
+                <li class="menu_firsst_li">
+                    <span class="iconfont icon-sort"></span>
+                    商品分类
+                </li>
+            </ul>
+            <ul class="sort_ul clearfix">
+                    <li class="menu_second_li">
+                        <a href="#" target="_blank" class="li_second">电视
+                            <span class="iconfont icon-jiantouyou"></span>
+                        </a>
+                        <ul class="uls">
+                            <li><a href="#" target="_blank">OLED</a></li>
+                            <li><a href="#" target="_blank">全面屏</a></li>
+                            <li><a href="#" target="_blank">防蓝光</a></li>
+                            <li><a href="#" target="_blank">AI智能</a></li>
+                            <li><a href="#" target="_blank">4K超清</a></li>
+                            <li><a href="#" target="_blank">智能网络</a></li>
+                            <li><a href="#" target="_blank">普通电视</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu_second_li">
+                        <a href="#" target="_blank" class="li_second">盒子/投影仪
+                            <span class="iconfont icon-jiantouyou"></span>
+                        </a>
+                        <ul class="uls">
+                            <li><a href="#" target="_blank">企鹅极光</a></li>
+                            <li><a href="#" target="_blank">T系</a></li>
+                            <li><a href="#" target="_blank">n系</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu_second_li">
+                        <a href="#" target="_blank" class="li_second">冰箱
+                            <span class="iconfont icon-jiantouyou"></span>
+                        </a>
+                        <ul class="uls">
+                            <li><a href="#" target="_blank">风冷</a></li>
+                            <li><a href="#" target="_blank">直冷</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu_second_li">
+                        <a href="#" target="_blank" class="li_second">洗衣机
+                            <span class="iconfont icon-jiantouyou"></span>
+                        </a>
+                        <ul class="uls">
+                            <li><a href="#" target="_blank">滚筒</a></li>
+                            <li><a href="#" target="_blank">波轮</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu_second_li">
+                        <a href="#" target="_blank" class="li_second">净水器
+                            <span class="iconfont icon-jiantouyou"></span>
+                        </a>
+                        <ul class="uls">
+                            <li><a href="#" target="_blank">前置过滤</a></li>
+                            <li><a href="#" target="_blank">直饮</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu_second_li">
+                        <a href="#" target="_blank" class="li_second">空调
+                            <span class="iconfont icon-jiantouyou"></span>
+                        </a>
+                        <ul class="uls">
+                            <li><a href="#" target="_blank">立柜式</a></li>
+                            <li><a href="#" target="_blank">壁挂式</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu_second_li">
+                        <a href="#" target="_blank" class="li_second">音响
+                            <span class="iconfont icon-jiantouyou"></span>
+                        </a>
+                        <ul class="uls">
+                            <li><a href="#" target="_blank">风冷</a></li>
+                            <li><a href="#" target="_blank">直冷</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu_second_li">
+                        <a href="#" target="_blank" class="li_second">显示器
+                            <span class="iconfont icon-jiantouyou"></span>
+                        </a>
+                        <ul class="uls"></ul>
+                    </li>
+                    <li class="menu_second_li">
+                        <a href="#" target="_blank" class="li_second">智能锁
+                            <span class="iconfont icon-jiantouyou"></span>
+                        </a>
+                        <ul class="uls"></ul>
+                    </li>
+                    <li class="menu_second_li">
+                        <a href="#" target="_blank" class="li_second">商务机
+                            <span class="iconfont icon-jiantouyou"></span>
+                        </a>
+                        <ul class="uls">
+                            <li><a href="#" target="_blank">E388G系列</a></li>
+                            <li><a href="#" target="_blank">E382W系列</a></li>
+                            <li><a href="#" target="_blank">E381W系列</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+        </div>
+        <div class="nav_right">
+            <ul>
+                <li><a href="#" target="_blank">首页</a></li>
+                <li><a href="#" target="_blank">电视</a></li>
+                <li><a href="#" target="_blank">洗衣机</a></li>
+                <li><a href="#" target="_blank">空调</a></li>
+                <li><a href="#" target="_blank">盒子/投影仪</a></li>
+                <li><a href="#" target="_blank">净水器</a></li>
+                <li><a href="#" target="_blank">智能锁</a></li>
+                <li><a href="#" target="_blank">冰箱</a></li>
+                <li><a href="#" target="_blank">音响</a></li>
+                <li><a href="#" target="_blank">显示器</a></li>
+                <li><a href="#" target="_blank">商务机</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户注册</title>
+    <link rel="stylesheet" href="one.sass">
+</head>
+<link href="css/public.css" rel="stylesheet" type="text/css">
+<link href="css/iconfont.css" rel="stylesheet" type="text/css">
+<style>
+    html{
+        background: #fff;
+        color: #333;;
+    }
+    /*头部*/
+    .login_header{
+        box-shadow: 0 0 20px -4px rgba(0,0,0,.2);
+    }
+    /*主体*/
+    .login_content{
+        width: 100%;
+        /*background-color: #9966FF;*/
+    }
+    .login_wrap{
+        width: 460px;
+        /*height: 550px;*/
+        margin: 30px auto;
+        box-shadow: 0 0 50px -10px rgba(0,0,0,.2);
+        background-color: skyblue;
+    }
+    .login_wrap{
+        background: #FFF;
+        border-radius: 20px;
+        box-shadow: 0 0 20px -4px rgba(0,0,0,.2);
+        padding: 20px 40px 50px 40px;
+    }
+    .step_head{
+        width: 100%;
+        margin: 0 auto;
+        /*display: none;*/
+        margin-top: 10px;
+        height: 120px;
+        /*background: pink;*/
+    }
+    .line{
+        width: 100%;
+        position: relative;
+        height: 5px;
+        top: 21px;
+        background: #eff3f8;
+    }
+    .ling_first{
+        width: 16.677777777%;
+        height: 5px;
+        background: #2e8ae4;
+    }
+    .step_head li{
+        text-align: center;
+        float: left;
+        position: relative;
+    }
+    .step_head .circle span{
+        background: #2e8ae4;
+        color: #FFFFFF;
+    }
+    .step_head .circle p{
+        color: #466faa;
+    }
+    .step_head li span{
+        transition: all, 0.7s
+    }
+    .step_head li{
+        text-align: center;
+        float: left;
+        position: relative;
+        width: 33.33333333%;
+        color: #999;
+    }
+    .step_head span{
+        position: relative;
+        margin: 0 auto;
+        font-size: 18px;
+        width: 34px;
+        height: 34px;
+        line-height: 34px;
+        display: block;
+        background: #eff3f8;
+        border-radius: 50%;
+        transition: all, 0.7s;
+    }
+    .step_head p{
+        margin-bottom: 10px;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+    
+    .step_con{
+        clear: both;
+    }
+    .con_input{
+        margin-bottom: 20px;
+    }
+    .input_top{
+        position: relative;
+    }
+    .input_top span:first-child{
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-size: 25px;
+        color: #dadada;
+    }
+    .input_top input{
+        border: 1px solid #e5e5e5;
+        border-radius: 3px;
+        height: 50px;
+        font-size: 14px;
+        padding: 0 42px;
+        width: 372px;
+    }
+    .input_top .input_info{
+        /*width: 130px;*/
+        float: left;
+        border-radius: 3px 0 0 3px;
+    }
+    .short{
+        width: 193px !important;
+        border-right: 0 !important;;
+    }
+    .input_span{
+        border: 1px solid #e5e5e5;
+        border-left: 0;
+        display: inline-block;
+        height: 45px;
+        width: 170px;
+        padding-right: 10px;
+        text-align: right;
+        line-height: 45px;
+        font-size: 14px;
+        color: #2e8ae4;
+        border-radius: 0 3px 3px 0;
+    }
+    .span_code{
+        height: 50px !important;
+        line-height: 48px !important;
+    }
+    .input_span a{
+        display: inline-block;
+        margin-left: 5px;
+        line-height: 50px;
+        float: right;
+        color: #333;
+    }
+    .input_bot{
+        color: #ccc;
+        padding-top: 2px;
+        clear: both;
+    }
+    .reg_nextbtn{
+        text-align: center;
+        width: 100%;
+    }
+    .reg_nextbtn button{
+        display: inline-block;
+        border: 0;
+        width: 100%;
+        height: 52px;
+        border-radius: 3px;
+        font-size: 14px;
+        margin-top: 20px;
+        transition: all, .5s;
+    }
+    .reg_btn{
+        color: #FFF;
+        background: #2e8ae4;
+    }
+    .input_top .input_send{
+        padding: 0 20px !important;
+        width: 111px !important;
+        height: 52px;
+    }
+    .send_code{
+        border-radius: 3px 0 0 3px !important;
+        width: 261px !important;
+    }
+</style>
+<body>
+<!--头部-->
+<div class="login_header">
+    <div class="head_login">
+        <div class="login_top_logo">
+            <a href="#" target="_blank">
+                <img src="imgs/index/logo.png">
+            </a>
+        </div>
+        <div class="login_top_right">
+            已有账号？<a href="login.html" target="_blank">请登录</a>
+        </div>
+    </div>
+</div>
+<!--内容-->
+<div class="login_content">
+    <div class="login_wrap clearfix">
+        <div class="step_head">
+            <div class="line">
+                <div class="ling_first"></div>
+            </div>
+            <ul>
+                <li class="circle">
+                    <span>1</span>
+                    <p>验证手机号</p>
+                </li>
+                <li>
+                    <span>2</span>
+                    <p>填写账号信息</p>
+                </li>
+                <li>
+                    <span>3</span>
+                    <p>注册成功</p>
+                </li>
+            </ul>
+        </div>
+        <div class="step_con">
+            <div class="con_input">
+                <div class="input_top">
+                    <span class="iconfont icon-keyboard"></span>
+                    <input  class="input_info short" id="txtImgCode" type="text" placeholder="请输入图形验证码">
+                    <span class="input_span span_code">
+                        <img id="check" src="" alt="看不清？换一张">
+                        <a id="change" href="#">换一张</a>
+                    </span>
+                </div>
+                <div class="input_bot">
+                    <span class="iconfont icon-warningo"></span>
+                    请输入图形验证码
+                </div>
+            </div>
+            <div class="con_input">
+                <div class="input_top">
+                    <span class="iconfont icon-LC_icon_phone_line
+"></span>
+                    <input  class="input_info" id="txtPhone" type="text" placeholder="请输入手机号码">
+                </div>
+                <div class="input_bot">
+                    <span class="iconfont icon-warningo"></span>
+                    验证完成后，可用此手机号进行登录和找回密码
+                </div>
+            </div>
+            <div class="con_input">
+                <div class="input_top">
+                    <span class="iconfont icon-keyboard"></span>
+                    <input  class="input_info send_code" id="txtCode" type="text" placeholder="请输入手机验证码">
+                    <input class="input_send" type="button" value="发送验证码">
+                </div>
+                <div class="input_bot">
+                    <span class="iconfont icon-warningo"></span>
+                    验证码已发送，请在120秒内输入正确的验证码
+                </div>
+            </div>
+            <div class="reg_nextbtn">
+                <button class="reg_btn" id="nextBtn">下一步</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--底部-->
+<div class="login_footer">
+    <div class="login_foot_content">
+        <ul>
+            <li>关于我们</li>
+            <li>|</li>
+            <li>联系我们</li>
+            <li>|</li>
+            <li>自助服务</li>
+            <li>|</li>
+            <li>友情链接</li>
+            <li>|</li>
+            <li>关注我们</li>
+            <li>|</li>
+            <li>购买流程</li>
+            <li>|</li>
+            <li>安装调试</li>
+            <li>|</li>
+            <li>税票制度</li>
+        </ul>
+        <p>ICP备案证号：粤ICP备09157852号</p>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    window.onload=function(){
+        //判断密码的等级
+        let userPass =document.getElementById("userPass");
+        userPass.onkeydown=function(){
+            //1.密码不能为空
+
+        }
+        //生成验证码
+        let check=document.getElementById("check");
+        check.onclick=function() {
+            createCode();
+        }
+
+        let change=document.getElementById("change");
+        change.onclick=function(){
+            createCode();
+        }
+
+
+    }
+
+
+    //获取验证码
+    function createCode(){
+        var random = new Array(0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F','G',
+            'H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y',
+            'Z');//随机数
+
+        code = "";
+        var codeLength = 4;//验证码的长度
+
+        for(let i=0;i<codeLength;i++){
+            var index=Math.floor(Math.random()*36);
+            code=code+random[index];
+        }
+
+        check.innerText=code;
+    }
+
+
+
+
+
+    // //
+    // function checkPhoneFormat(str) {
+    //     var reg = /^(1[0-9]{10})$/;
+    //     if (reg.test(str))// 电话号码格式正确
+    //         return true;
+    //     else //号码格式错误
+    //         return false;
+    // }
+    //
+    // var funGet = function () {
+    //     $("#btn_code").attr("disabled", "disabled");
+    //     var data = {};
+    //     data.action = "GetCodeByReg";
+    //     data.phone = $("#txtPhone").val();
+    //     data.code = $("#txtImgCode").val();
+    //     if (!data.code) {
+    //         alert('图形验证码不能为空!');
+    //         $("#btn_code").removeAttr("disabled");//将按钮可用
+    //         return;
+    //     }
+    //     $.ajax({
+    //         type: 'POST',
+    //         url: 'Ajax/ajax.aspx',
+    //         data: data,
+    //         dataType: "html",
+    //         async: true,     // 默认为异步请求
+    //         success: function (t) {
+    //
+    //             if (t) {
+    //                 if (t == "1") {
+    //                     c = 120;
+    //                     isCode = true;
+    //                     CountdownStart();
+    //                 } else {
+    //                     if (t == -1) {
+    //                         alert('手机号码不能为空....');
+    //                     } else {
+    //                         alert('发送失败,稍后在试试....原因：' + t);
+    //                     }
+    //                 }
+    //             }
+    //             $("#btn_code").removeAttr("disabled");//将按钮可用
+    //         }, error: function () {
+    //             $("#btn_code").removeAttr("disabled");//将按钮可用
+    //         }
+    //     });
+    // }
+    //
+    // //倒计时
+    // var c = 0;
+    // var btn = $("#txtPhone");
+    // var timeline;
+    // function CountdownStart() {
+    //     timeline = setInterval(Countdown, 1000);
+    // }
+    //
+    // function Countdown() {
+    //     if (c > 0) {
+    //         $("#btn_code").attr("disabled", "disabled");
+    //         $("#btn_code").val("" + c + "");
+    //         c--;
+    //     }
+    //     else {
+    //         //getCode();
+    //         $("#btn_code").removeAttr("disabled");//将按钮可用
+    //         $("#btn_code").val("获取");
+    //         clearInterval(timeline);
+    //     }
+    // }
+    // var isCh = false, isCode = false;
+    // var bs = 1;
+    // function funCode() {
+    //     $("#nextBtn").attr("disabled", "disabled");
+    //     var data = {};
+    //     data.action = "VCode";
+    //     data.code = $("#txtCode").val();
+    //     data.phone = $("#txtPhone").val();
+    //     $.ajax({
+    //         type: 'POST',
+    //         url: 'Ajax/ajax.aspx',
+    //         data: data,
+    //         dataType: "html",
+    //         async: true,     // 默认为异步请求
+    //         success: function (t) {
+    //             if (t) {
+    //                 if (t == "1") {
+    //                     isCh = true;
+    //                     if (isCh) {
+    //                         var yes = step.nextStep();
+    //                         bs++;
+    //                         if (yes) {
+    //                         }
+    //                     } else {
+    //                         alert("未通过短信验证.");
+    //                     }
+    //                 } else {
+    //                     alert("未通过短信验证.");
+    //                 }
+    //             }
+    //             $("#nextBtn").removeAttr("disabled");//将按钮可用
+    //         }, error: function () {
+    //             $("#nextBtn").removeAttr("disabled");//将按钮可用
+    //         }
+    //     });
+    // }
+    //
+    // var Reg = function () {
+    //     $("#nextBtn").attr("disabled", "disabled");
+    //     var data = {};
+    //     data.action = "Reg";
+    //     data.code = $("#txtCode").val();
+    //     data.phone = $("#txtPhone").val();
+    //     data.pwd = $("#pwd").val();
+    //     $.ajax({
+    //         type: 'POST',
+    //         url: 'Ajax/ajax.aspx',
+    //         data: data,
+    //         dataType: "html",
+    //         async: true,     // 默认为异步请求
+    //         success: function (t) {
+    //             if (t) {
+    //                 if (t == "1") {
+    //                     var yes = step.nextStep();
+    //                     bs++;
+    //                     if (yes) {
+    //                         $("#nextBtn").hide();
+    //                     }
+    //                 } else {
+    //                     alert("注册失败,原因：" + t);
+    //                 }
+    //             }
+    //             $("#nextBtn").removeAttr("disabled");//将按钮可用
+    //         }, error: function () {
+    //             $("#nextBtn").removeAttr("disabled");//将按钮可用
+    //         }
+    //     });
+    // }
+    //
+    // var step = null;
+    // $(function () {
+    //     step = $("#myStep").step();
+    //     $("#nextBtn").click(function (event) {
+    //         var phone = $("#txtPhone").val();
+    //         var code = $("#txtCode").val();
+    //         var pwd = $("#pwd").val();
+    //         var cpwd = $("#cpwd").val();
+    //
+    //         if (bs == "1") {
+    //             if (phone == "") {
+    //                 alert("手机号码不能为空？");
+    //                 $("#txtPhone").select();
+    //                 return false;
+    //             }
+    //             if (!checkPhoneFormat(phone)) {
+    //                 alert("错误的手机号码？");
+    //                 $("#txtPhone").select();
+    //                 return false;
+    //             }
+    //             if (!isCode) {
+    //                 alert("请点击发送按钮获取验证码？");
+    //                 $("#txtCode").select();
+    //                 return false;
+    //             }
+    //             if (code == "") {
+    //                 alert("请填写验证码？");
+    //                 $("#txtCode").select();
+    //                 return false;
+    //             }
+    //             funCode();
+    //         } else if (bs == "2") {
+    //             if (pwd == "") {
+    //                 alert("密码不能为空？");
+    //                 $("#pwd").select();
+    //                 return false;
+    //             }
+    //             if (cpwd == "") {
+    //                 alert("密码不能为空？");
+    //                 $("#cpwd").select();
+    //                 return false;
+    //             }
+    //             var regex = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,20}$/;
+    //             if (!regex.test(pwd)) {
+    //                 alert("密码格式：6-20位字母数字组合？");
+    //                 $("#pwd").select();
+    //                 return false;
+    //             }
+    //             if (pwd != cpwd) {
+    //                 alert("密码两次输入不一致？");
+    //                 $("#pwd").select();
+    //                 return false;
+    //             }
+    //             Reg();
+    //         }
+    //     });
+    // });
+</script>
+

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户登录</title>
+</head>
+<link href="css/public.css" rel="stylesheet" type="text/css">
+<style>
+
+    html{
+        background: #fff;
+        color: #333;;
+    }
+    /*主体部分*/
+    .login_content{
+        width: 100%;
+        /*background-color: #9966FF;*/
+    }
+    .login_wrap{
+        width: 1090px;
+        height: 550px;
+        margin: 0 auto;
+        box-shadow: 0 0 50px -10px rgba(0,0,0,.2);
+        /*background-color: skyblue;*/
+    }
+    .login_left{
+        float: left;
+    }
+    .login_right{
+        float: left;
+        padding: 30px;
+        background: #FFF;
+        height: 490px;
+    }
+    .login_title{
+        font-size: 24px;
+        margin: 20px 40px 30px 0;
+        padding: 2px 0;
+        position: relative;
+    }
+    .login_input_wrap{
+        margin-top: 15px;
+    }
+    .login_input_border{
+        width: 310px;
+    }
+    .login_input_wrap input {
+        height: 45px;
+        border: 1px solid #e5e5e5;
+        border-radius: 3px;
+        padding: 0 10px;
+        font-size: 14px;
+    }
+    .login_input_last input{
+        width: 130px;
+        float: left;
+        height: 45px;
+        border-radius: 3px 0 0 3px;
+        border: 1px solid #e5e5e5;
+        border-right: 0;
+        margin-top: 15px;
+        padding: 0 10px;
+        font-size: 14px;
+    }
+    .login_span {
+        border: 1px solid #e5e5e5;
+        border-left: 0;
+        display: inline-block;
+        height: 45px;
+        width: 170px;
+        padding-right: 10px;
+        text-align: right;
+        line-height: 45px;
+        /*font-size: 14px;*/
+        color: #2e8ae4;
+        border-radius: 0 3px 3px 0;
+        margin-top: 15px;
+    }
+    .login_span img {
+        margin-bottom: 3px;
+        line-height: 43px;
+    }
+    .login_span a{
+        float: right;
+    }
+    .login_span img, .login_span a{
+        display: inline-block;
+        margin-left: 5px;
+        color: #333;
+        font-size: 14px;
+    }
+    .login_blue_button{
+        background: #2e8ae4;
+        width: 100%;
+        border: 0;
+        color: #fff;
+        transition: all, .5s;
+        margin-top: 30px;
+    }
+    .login_blue_button:hover{
+        cursor: pointer;
+    }
+    .login_label {
+        float: left;
+        color: #999;
+    }
+    input.login_check {
+        width: 15px;
+        height: 15px;
+        margin-right: 5px;
+        border: 1px solid #f0f0f0;
+        vertical-align: middle;
+    }
+    .login_forget {
+        float: right;
+    }
+    .login_forget a{
+        color: #666;
+    }
+
+
+</style>
+<body>
+    <!--头部-->
+    <div class="login_header">
+        <div class="head_login">
+            <div class="login_top_logo">
+                <a href="#" target="_blank">
+                    <img src="imgs/index/logo.png">
+                </a>
+            </div>
+            <div class="login_top_right">
+                没有账号？<a href="register.html" target="_blank">请注册</a>
+            </div>
+        </div>
+    </div>
+    <!--内容-->
+    <div class="login_content">
+        <div class="login_wrap clearfix">
+            <div class="login_left">
+                <img src="imgs/index/login_ad.png"/>
+            </div>
+            <div class="login_right">
+                <p class="login_title">会员登录</p>
+                <div class="login_input clearfix">
+                    <div class="login_input_wrap">
+                        <input id="lid" type="text" class="login_input_border" placeholder="邮箱/手机号/用户名" >
+                    </div>
+                    <div class="login_input_wrap">
+                        <input id="pwd" type="text" class="login_input_border" placeholder="请输入登录密码" >
+                    </div>
+                    <div class="login_input_last">
+                        <input id="code" type="text" class="login_input_border" placeholder="请输入验证码" >
+                        <span class="login_span">
+                            <img id="VilidatoCodeImg" title="看不清楚？换一张" align="absmiddle" onclick="huan();">
+                            <a href="#">换一张</a>
+                        </span>
+                    </div>
+                </div>
+                <div class="login_input_wrap">
+                    <input  id="btnLogin" type="button" class="login_blue_button" value="登录" onclick="IsLogin();">
+                </div>
+                <div class="login_input_wrap">
+                    <div class="login_label">
+                        <label>
+                            <input type="checkbox" id="isDay" class="login_check">30天内记住我的登录信息</label>
+                    </div>
+                    <div class="login_forget">
+                        <a href="http://shop.skyworth.com/ForPwd.aspx">忘记密码？</a>/
+                        <a href="http://shop.skyworth.com/LogReg.aspx">注册</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--底部-->
+    <div class="login_footer">
+        <div class="login_foot_content">
+            <ul>
+                <li>关于我们</li>
+                <li>|</li>
+                <li>联系我们</li>
+                <li>|</li>
+                <li>自助服务</li>
+                <li>|</li>
+                <li>友情链接</li>
+                <li>|</li>
+                <li>关注我们</li>
+                <li>|</li>
+                <li>购买流程</li>
+                <li>|</li>
+                <li>安装调试</li>
+                <li>|</li>
+                <li>税票制度</li>
+            </ul>
+            <p>ICP备案证号：粤ICP备09157852号</p>
+        </div>
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script>
+    var Login = function () {
+        $("#btnLogin").attr("disabled", "disabled");
+        var data = {};
+        data.action = "Login";
+        data.code = $("#code").val();
+        data.lid = $("#lid").val();
+        data.pwd = $("#pwd").val();
+        var isChecked = $('#isDay').is(":checked");
+        data.isDay = isChecked ? "1" : "0";
+        $.ajax({
+            type: 'POST',
+            url: 'Ajax/ajax.aspx',
+            data: data,
+            dataType: "html",
+            async: true,     // 默认为异步请求
+            success: function (t) {
+                if (t) {
+                    if (t == "1") {
+                        location.href = "http://shop.skyworth.com/index.aspx";
+                    } else {
+                        huan();
+                        alert("登录失败,原因：" + t);
+                    }
+                }
+                $("#btnLogin").removeAttr("disabled");//将按钮可用
+            }, error: function () {
+                $("#btnLogin").removeAttr("disabled");//将按钮可用
+            }
+        });
+    };
+
+    var IsLogin = function () {
+            var lid = $("#lid").val();
+            var pwd = $("#pwd").val();
+            var code = $("#code").val();
+
+            if (lid == "") {
+                alert("账号不能为空？");
+                $("#lid").select();
+                return false;
+            }
+
+            if (pwd == "") {
+                alert("密码不能为空？");
+                $("#pwd").select();
+                return false;
+            }
+
+            if (code == "") {
+                alert("验证码不能为空？");
+                $("#code").select();
+                return false;
+            }
+
+            var regex = /^[\w]{6,20}$/;
+            if (!regex.test(pwd)) {
+                alert("密码格式：6-20位字母数字组合？");
+                $("#pwd").select();
+                return false;
+            }
+
+            Login();
+        }
+
+
+    var huan = function () {
+        $("#VilidatoCodeImg").attr("src", "checkcode.ashx?r=" + Math.random() + "");
+    }
+
+    $(document).keydown(function (event) {
+        if (event.keyCode == 13) {
+            $("#btnLogin").click();
+        }
+    });
+
+
+    var huan = function () {
+        $("#VilidatoCodeImg").attr("src", "checkcode.ashx?r=" + Math.random() + "");
+    }
+</script>
