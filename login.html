@@ -76,10 +76,6 @@
         border-radius: 0 3px 3px 0;
         margin-top: 15px;
     }
-    .login_span img {
-        margin-bottom: 3px;
-        line-height: 43px;
-    }
     .login_span a{
         float: right;
     }
@@ -116,8 +112,22 @@
     }
     .login_forget a{
         color: #666;
+        display:inline-block;
     }
-
+    #VilidatoCodeImg{
+        width: 85px;
+        height: 38px;
+        display: inline-block;
+        text-align: center;
+        margin-top: 4px;
+        border: 1px solid midnightblue;
+        background: #efefef;
+        font-weight: 800;
+        letter-spacing: 2px;
+        color:firebrick;
+        font-size: 16px;
+        line-height: 36px;
+    }
 
 </style>
 <body>
@@ -147,18 +157,18 @@
                         <input id="lid" type="text" class="login_input_border" placeholder="邮箱/手机号/用户名" >
                     </div>
                     <div class="login_input_wrap">
-                        <input id="pwd" type="text" class="login_input_border" placeholder="请输入登录密码" >
+                        <input id="pwd" type="password" class="login_input_border" placeholder="请输入登录密码" >
                     </div>
                     <div class="login_input_last">
                         <input id="code" type="text" class="login_input_border" placeholder="请输入验证码" >
                         <span class="login_span">
-                            <img id="VilidatoCodeImg" title="看不清楚？换一张" align="absmiddle" onclick="huan();">
-                            <a href="#">换一张</a>
+                            <sapn id="VilidatoCodeImg"  align="absmiddle"></sapn>
+                            <a href="#" id="change">换一张</a>
                         </span>
                     </div>
                 </div>
                 <div class="login_input_wrap">
-                    <input  id="btnLogin" type="button" class="login_blue_button" value="登录" onclick="IsLogin();">
+                    <input  id="btnLogin" type="button" class="login_blue_button" value="登录" onclick="IsLogin()">
                 </div>
                 <div class="login_input_wrap">
                     <div class="login_label">
@@ -197,86 +207,115 @@
     </div>
 </body>
 </html>
-<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
-<script type="text/javascript" src="js/common.js"></script>
+
 <script>
-    var Login = function () {
-        $("#btnLogin").attr("disabled", "disabled");
-        var data = {};
-        data.action = "Login";
-        data.code = $("#code").val();
-        data.lid = $("#lid").val();
-        data.pwd = $("#pwd").val();
-        var isChecked = $('#isDay').is(":checked");
-        data.isDay = isChecked ? "1" : "0";
-        $.ajax({
-            type: 'POST',
-            url: 'Ajax/ajax.aspx',
-            data: data,
-            dataType: "html",
-            async: true,     // 默认为异步请求
-            success: function (t) {
-                if (t) {
-                    if (t == "1") {
-                        location.href = "http://shop.skyworth.com/index.aspx";
+    window.onload=function(){
+        //用户名不能为空
+        $("#lid").onblur=function(){
+            if($("#lid").value==""){
+                alert("亲，请输入用户名!");
+                return;
+            }
+        }
+        //密码不能为空
+        $("#pwd").onblur=function(){
+            if($("#pwd").value==""){
+                alert("亲，请输入密码!");
+                return;
+            }
+        }
+
+
+        //生成验证码
+        createCode();
+        var check=document.getElementById("VilidatoCodeImg");
+        check.onclick=function() {
+            createCode();
+        }
+
+        let change=document.getElementById("change");
+        change.onclick=function(){
+            createCode();
+        }
+
+        //判断验证码是否输入正确
+        var VilidatoCodeImg=document.getElementById("VilidatoCodeImg");
+        $("#code").onblur=function(){
+            if((this.value)!=VilidatoCodeImg.innerText) {
+                alert("亲，您看仔细呦,您输入的验证码不正确哦!");
+                return;
+            }
+        }
+
+        // 使用ajax链接后台
+        //登录成功跳转到首页
+        $("#btnLogin").onclick = function () {
+
+            // 判断验证码：为空则不能登录
+            if($("#code").value==""){
+                alert("亲，请输入验证码!");
+                return;
+            }
+
+            //保存到cookie
+            // var d = new Date();
+            //     d.setDate(d.getDate()+7);
+            //     document.cookie = "username=jzm;expires="+d.toGMTString();
+            //     alert("保存成功！");
+
+            //1、创建ajax核心对象XMLHttpRequest;
+            let xhr = new XMLHttpRequest();
+            //2、设置请求参数（请求方式，请求地址，同步哈市异步）
+            xhr.open("post", "php/login.php", true);
+            //3、设置回调函数
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    //5.接收响应
+                    if (xhr.responseText == "1") {
+                        location.href = "index.html";
                     } else {
-                        huan();
-                        alert("登录失败,原因：" + t);
+                        alert("登录失败，用户名和密码不符!");
                     }
                 }
-                $("#btnLogin").removeAttr("disabled");//将按钮可用
-            }, error: function () {
-                $("#btnLogin").removeAttr("disabled");//将按钮可用
-            }
-        });
-    };
-
-    var IsLogin = function () {
-            var lid = $("#lid").val();
-            var pwd = $("#pwd").val();
-            var code = $("#code").val();
-
-            if (lid == "") {
-                alert("账号不能为空？");
-                $("#lid").select();
-                return false;
             }
 
-            if (pwd == "") {
-                alert("密码不能为空？");
-                $("#pwd").select();
-                return false;
+            //设置请求头(post方式)，
+            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            let str = `lid=${$("#lid").value}&pwd=${$("#pwd").value}`;
+            // 4、发送请求
+            xhr.send(str);
             }
-
-            if (code == "") {
-                alert("验证码不能为空？");
-                $("#code").select();
-                return false;
-            }
-
-            var regex = /^[\w]{6,20}$/;
-            if (!regex.test(pwd)) {
-                alert("密码格式：6-20位字母数字组合？");
-                $("#pwd").select();
-                return false;
-            }
-
-            Login();
         }
 
+    //获取验证码
+    function createCode(){
+        let check=document.getElementById("VilidatoCodeImg");
+        var random = new Array(0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F','G',
+            'H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y',
+            'Z','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z');//随机数
 
-    var huan = function () {
-        $("#VilidatoCodeImg").attr("src", "checkcode.ashx?r=" + Math.random() + "");
-    }
+        code = "";
+        var codeLength = 6;//验证码的长度
 
-    $(document).keydown(function (event) {
-        if (event.keyCode == 13) {
-            $("#btnLogin").click();
+        for(let i=0;i<codeLength;i++){
+            var index=Math.floor(Math.random()*62);
+            code=code+random[index];
         }
-    });
 
-
-    var huan = function () {
-        $("#VilidatoCodeImg").attr("src", "checkcode.ashx?r=" + Math.random() + "");
+        check.innerText=code;
     }
+
+
+
+
+    function $(str){
+        if(str.charAt(0)=="#"){
+            return document.getElementById(str.substring(1));
+        }else if(str.charAt(0)=="."){
+            return document.getElementsByClassName(str.substring(1));
+        }else{
+            return document.getElementsByTagName(str);
+        }
+    }
+
 </script>

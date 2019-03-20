@@ -14,14 +14,295 @@
    }
     .menu_sort ul:nth-child(2){
         background: pink;
-        height: 512px;
+        height: 512px !important;
         background: -webkit-linear-gradient(#3084e5, #18ebe2);
         background: -ms-linear-gradient(#3084e5, #18ebe2);
         background: -moz-linear-gradient(#3084e5, #18ebe2);
         display: none;
+        /*opacity: .8;*/
     }
-    .menu_sort ul:nth-child(1):hover .sort_ul{
+    .uls{
+        background: rgba(255,255,255,.9) !important;
+    }
+
+    /*主体内容*/
+    .detail_content{
+        width: 100%;
+    }
+    .dt_wrap{
+        height: 35px;
+        margin: 0 auto;
+        line-height: 35px;
+        width: 1210px;
+    }
+    .dt_wrap a{
+        color: #666;
+        display: inline-block;
+    }
+    .dt_wrap em{
+        padding: 0 5px;
+    }
+    .dt_product{
+        width: 1150px;
+        margin: 0 auto;
+        background: #FFF;
+        padding: 60px 30px;
+        position: relative;
+        /*background: pink;*/
+        margin-bottom: 20px;
+        overflow: hidden;
+    }
+
+    /*左侧放大镜*/
+    .pro_left{
+        /*width: 460px;*/
+        float: left;
+        /*background: #00FFFF;*/
+    }
+   #pro_bigBox{
+        position:relative;
+        width: 500px;
+        height: 500px;
+        background: url(imgs/detail/dt-pic01.jpg);
+        background-size: 500px 500px;
+    }
+   #pro_mirrorBox{
+        position:absolute;
+        /*left:100px;*/
+        /*top:120px;*/
+        width:250px;
+        height:250px;
+        background-color:gray;
+        opacity:0.5;
+    }
+   #pro_showBox{
+        position:absolute;
+        left:510px;
+        top:0px;
+        width:300px;
+        height:300px;
+        background: url(imgs/detail/dt-pic01.jpg);
+        background-size:1500px 1020px;
+        display: none;
+    }
+   #imgList{
+        overflow: hidden;
+        /*width: 414px;*/
+        height: 88px;
+        margin-left: 20px;
+        position: relative;
+    }
+   #imgList li{
         display: block;
+        width: 80px;
+        height: 80px;
+        float: left;
+        margin: 5px;
+        background-size: cover;
+        border: 1px solid #cccccc;
+    }
+   #imgList li:nth-child(1){
+       background-image: url(imgs/detail/dt-pic01.jpg);
+   }
+   #imgList li:nth-child(2){
+       background-image: url(imgs/detail/dt-pic02.jpg);
+   }
+   #imgList li:nth-child(3){
+       background-image: url(imgs/detail/dt-pic03.jpg);
+   }
+   #imgList li:nth-child(4){
+       background-image: url(imgs/detail/dt-pic04.jpg);
+   }
+   #imgList li:nth-child(5){
+       background-image: url(imgs/detail/dt-pic05.jpg);
+   }
+    /*右侧产品信息*/
+    .detail_wrap{
+        margin-top: 22px;
+        font-size: 14px;
+    }
+    .dt_one{
+        float: left;
+        width: 65px;
+        color: #666;
+    }
+    .dt_font{
+        font-size: 18px;
+        color: #e83632;
+    }
+    .dt_post{
+        float: left;
+        width: 527px;
+    }
+    .dt_select{
+        float: left;
+        width: 527px;
+    }
+    .dt_select a{
+        display: inline-block;
+        font-size: 12px;
+        border: 1px solid #e5e5e5;
+        margin: -3px 8px 4px 0;
+        padding: 5px 10px;
+    }
+    .dt_count{
+        float: left;
+        width: 527px;
+        margin-top: -3px;
+    }
+    .dt_count a{
+        border: 1px solid #e5e5e5;
+        float: left;
+        width: 27px;
+        height: 27px;
+        text-align: center;
+        line-height: 27px;
+    }
+    .dt_count input{
+        height: 27px;
+        width: 40px;
+        text-align: center;
+        float: left;
+        border: 1px solid #e5e5e5;
+        border-left: 0;
+        border-right: 0;
+    }
+    .dt_post span{
+        color: red;
+    }
+    .dt_shopCar,.dt_buy{
+        float: left;
+        height: 40px;
+        line-height: 40px;
+        color: #FFF;
+        text-align: center;
+        transition: all, .5s;
+        font-size: 14px;
+        margin-top: 20px;
+        padding: 0 20px;
+    }
+   .dt_shopCar{
+       background: #2e8ae4;
+       margin-right: 20px;
+   }
+    .dt_buy{
+        background: #e83632;
+        margin-right: 20px;
+    }
+    /*产品详情*/
+    .detail_other{
+        width: 1210px;
+        margin: 0 auto;
+        background: #FFF;
+    }
+    /*上边导航*/
+    .other_title{
+        _position: absolute;
+        top: 0 !important;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 99;
+        /*box-shadow: -6px -2px 30px -5px rgba(0,0,0,.4);*/
+        margin-top: 0 !important;
+    }
+    .title_box{
+        width: 1210px;
+        height: 60px;
+        background: #fff;
+        margin: 0 auto;
+        position: relative;
+    }
+    .like{
+        line-height: 57px;
+        font-size: 14px;
+        float: left;
+        width: 200px;
+        padding-left: 30px;
+    }
+    .other_title ul{
+        float: right;
+        width: 930px;
+        line-height: 57px;
+        padding-right: 30px;
+    }
+   .other_title ul li{
+       display: inline-block;
+       font-size: 14px;
+       margin-right: 40px;
+       cursor: pointer;
+       transition: all, .5s;
+       line-height: 55px;
+   }
+   .other_title ul li:hover{
+       color: #2e8ae4;
+       border-bottom: 2px solid #2e8ae4;
+       line-height: 22px !important;
+   }
+   .blue{
+       color: #2e8ae4;
+       border-bottom: 2px solid #2e8ae4;
+       line-height: 22px !important;
+   }
+   .addShopCar{
+       position: absolute;
+       right: 30px;
+       top: 12px;
+       border-radius: 3px;
+       color: #666;
+   }
+   .addShopCar a{
+       display: block;
+       color: #FFF;
+       background: #e93632;
+       padding: 0 15px;
+       line-height: 30px;
+       border-radius: 5px;
+   }
+   /*左侧列表*/
+    .other_con_left{
+        float: left;
+        width: 200px;
+        /*background: #18ebe2;*/
+        margin-left: 30px;
+    }
+    .other_main_list{
+        border: 1px solid #eee;
+        padding: 10px 0;
+        margin-bottom: 15px;
+        transition: all, .5s;
+    }
+    .main_list_image{
+        text-align: center;
+    }
+    .other_main_list:hover{
+        box-shadow: 0px 1px 20px -4px rgba(0,0,0,.2);
+    }
+    .other_main_list a{
+        padding: 0 22px 10px 22px;
+    }
+
+   .other_main_list img{
+       width: 150px;
+       height: 150px;
+   }
+    .other_main_list p{
+        color: red;
+        font-size: 16px;
+        text-align: left;
+        padding: 0 22px 10px 22px;
+    }
+    /*右侧产品详情*/
+    .other_con_right{
+        float: right;
+        width: 930px;
+        padding-right: 30px;
+        padding-bottom: 50px;
+    }
+    .con_right_box{
+        text-align: center;
+        padding: 20px 0 30px 0;
+        border: 1px solid #eee;
     }
 </style>
 <body>
@@ -103,13 +384,12 @@
 <div class="nav clearfix">
     <div class="nav_menu">
         <div class="menu_sort">
-            <ul>
+            <ul class="menu_ul_first">
                 <li class="menu_firsst_li">
                     <span class="iconfont icon-sort"></span>
                     商品分类
                 </li>
-            </ul>
-            <ul class="sort_ul clearfix">
+                <ul class="sort_ul clearfix">
                     <li class="menu_second_li">
                         <a href="#" target="_blank" class="li_second">电视
                             <span class="iconfont icon-jiantouyou"></span>
@@ -202,7 +482,7 @@
                         </ul>
                     </li>
                 </ul>
-
+            </ul>
         </div>
         <div class="nav_right">
             <ul>
@@ -221,7 +501,334 @@
         </div>
     </div>
 </div>
-
-
+<!--产品介绍-->
+<div class="detail_content clearfix">
+    <!--导航-->
+    <div class="dt_wrap">
+        <a href="index.html" target="_blank">首页</a><em>/</em>
+        <a href="#" target="_blank">商品列表</a><em>/</em>
+        <a href="#" target="_blank">产品详情</a>
+    </div>
+    <!--产品介绍-->
+    <div class="dt_product">
+        <div class="pro_left clearfix">
+            <div id="pro_bigBox">
+                <div id="pro_mirrorBox"></div>
+                <div id="pro_showBox"></div>
+            </div>
+            <ul id="imgList">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="pro_right">
+            <p>55H6(送影视年卡、挂架)</p>
+            <p>全面屏|超解像技术|防蓝光|2+32G|AI语言|运动补偿</p>
+            <p>下单送挂架，3月17日-3月31日，加送爱奇艺会员一年包</p>
+            <div class="detail_wrap clearfix">
+                <div class="dt_one">售价</div>
+                <div class="dt_font">￥3188.00</div>
+            </div>
+            <div class="detail_wrap clearfix">
+                <div class="dt_one">运费</div>
+                <div class="dt_post">全场包邮</div>
+            </div>
+            <div class="detail_wrap clearfix">
+                <div class="dt_one">版本</div>
+                <div class="dt_select">
+                    <a href="#">65H6(送影视年卡)</a>
+                    <a href="#">55H6(送影视年卡、挂架)</a>
+                    <a href="#">50H6(送影视年卡)</a>
+                </div>
+            </div>
+            <div class="detail_wrap clearfix">
+                <div class="dt_one">数量</div>
+                <div class="dt_count">
+                    <a href="">
+                        <span class="iconfont icon-minus"></span>
+                    </a>
+                    <input type="text" placeholder="1">
+                    <a href="">
+                        <span class="iconfont icon-add"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="detail_wrap clearfix">
+                <div class="dt_one">服务</div>
+                <div class="dt_post">由<span>创维-RGB有限公司</span>发货，并提供售后服务</div>
+            </div>
+            <div class="detail_wrap clearfix">
+                <a href="#" class="dt_shopCar">加入购物车</a>
+                <a href="#" class="dt_buy">立即购买</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--猜你喜欢-->
+<div class="other_title">
+    <div class="title_box">
+        <div class="like">猜你喜欢</div>
+        <ul>
+            <li class="blue">产品介绍</li>
+            <li>售后服务</li>
+            <li>商品评价</li>
+        </ul>
+        <div class="addShopCar">
+            <a href=":javascript">
+                <span class="iconfont icon-shop-cart"></span>
+                加入购物车
+            </a>
+        </div>
+    </div>
+</div>
+<!--产品详情-->
+<div id="top" class="detail_other clearfix">
+    <div class="other_con">
+        <!--左侧产品列表-->
+        <div class="other_con_left">
+            <div class="other_main_list">
+                <div class="main_list_image">
+                    <a href="#">
+                    <img src="imgs/detail/other-pic01.jpg">
+                </a>
+                </div>
+                <p>￥138.0</p>
+                <a href="#">创维盒子T1(AV线版)</a>
+            </div>
+            <div class="other_main_list">
+                <div class="main_list_image">
+                    <a href="#">
+                        <img src="imgs/detail/other-pic02.jpg">
+                    </a>
+                </div>
+                <p>￥1999.0</p>
+                <a href="#">净水器mini</a>
+            </div>
+            <div class="other_main_list">
+                <div class="main_list_image">
+                    <a href="#">
+                        <img src="imgs/detail/other-pic03.jpg">
+                    </a>
+                </div>
+                <p>￥1899.00</p>
+                <a href="#">F100PC5白洗衣机</a>
+            </div>
+            <div class="other_main_list">
+                <div class="main_list_image">
+                    <a href="#">
+                        <img src="imgs/detail/other-pic04.jpg">
+                    </a>
+                </div>
+                <p>￥1249.00</p>
+                <a href="#">F60A洗衣机</a>
+            </div>
+            <div class="other_main_list">
+                <div class="main_list_image">
+                    <a href="#">
+                        <img src="imgs/detail/other-pic05.jpg">
+                    </a>
+                </div>
+                <p>￥138.0</p>
+                <a href="#">创维盒子T1(AV线版)</a>
+            </div>
+            <div class="other_main_list">
+                <div class="main_list_image">
+                    <a href="#">
+                        <img src="imgs/detail/other-pic03.jpg">
+                    </a>
+                </div>
+                <p>￥5699.00</p>
+                <a href="#">50Q5A</a>
+            </div>
+        </div>
+        <!--右侧产品详情-->
+        <div class="other_con_right">
+            <div class="con_right_box">
+                <img src="imgs/detail/01.jpg">
+                <img src="imgs/detail/03.jpg">
+                <!--<img src="imgs/detail/04.jpg">-->
+                <img src="imgs/detail/05.jpg">
+                <img src="imgs/detail/06.jpg">
+                <img src="imgs/detail/07.jpg">
+                <img src="imgs/detail/08.jpg">
+                <img src="imgs/detail/09.jpg">
+                <img src="imgs/detail/10.jpg">
+                <img src="imgs/detail/11.jpg">
+                <img src="imgs/detail/12.jpg">
+                <img src="imgs/detail/13.jpg">
+                <img src="imgs/detail/14.jpg">
+                <img src="imgs/detail/15.jpg">
+                <img src="imgs/detail/16.jpg">
+                <img src="imgs/detail/17.jpg">
+                <img src="imgs/detail/18.jpg">
+            </div>
+        </div>
+    </div>
+</div>
+<!--底部-->
+<div class="footer_wrap">
+    <div class="foot_content">
+        <ul class="foot_ul">
+            <li>支付方式</li>
+            <li><a href="#"target="_blank">微信支付</a></li>
+            <li><a href="#"target="_blank">支付宝</a></li>
+        </ul>
+        <ul class="foot_ul weixin">
+            <li>售后服务</li>
+            <li><a href="#"target="_blank">发票无忧</a></li>
+            <li><a href="#"target="_blank">安装维修</a></li>
+            <li><a href="#"target="_blank">验货提醒</a></li>
+        </ul>
+        <ul class="foot_right">
+            <li>400-866-5555</li>
+            <li>周一至周日 7:00-23:00</li>
+            <li class="service"><a href="#"target="_blank"><span class="iconfont icon-service"></span>在线客服</a></li>
+        </ul>
+    </div>
+</div>
+<!--友情链接-->
+<div class="link">
+    <div class="link_wrap">
+        <div class="link_left">
+            友情链接：<a href="#" target="_blank">酷开TV</a><br/> ICP备案证号：粤ICP备09157852号
+        </div>
+        <div class="link_right">
+            <img src="imgs/index/footerIco1.jpg" alt="">
+        </div>
+    </div>
+</div>
+<!--客服-->
+<div class="floatNav">
+    <a class="nav_service" href="#" target="_blank">
+        <span class="after"></span>
+    </a>
+    <a class="nav_service" href="#" target="_blank">
+        <span class="before"></span>
+    </a>
+    <a class="nav_service  backTop" href="javascript:;" target="_blank">
+        <span class="top"></span>
+    </a>
+</div>
 </body>
 </html>
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="js/bigMirror.js"></script>
+<script>
+
+    // window.onload = function(){
+    // //划过商品列表，显示商品清单
+    //     let liDom = document.getElementsByClassName("menu_ul_first")[0];
+    //     let sort_ul= document.getElementsByClassName("sort_ul")[0];
+    //     liDom.onmouseenter=function(){
+    //         sort_ul.style.display="block";
+    //     }
+    //     liDom.onmouseleave=function(){
+    //         sort_ul.style.display="none";
+    //         }
+    //
+    //     }
+    //     //侧边栏
+    //     $(".sort_ul>li").each(function () {
+    //         this.onmouseenter = function () {
+    //             this.children[1].style.display = "block";
+    //         };
+    //         this.onmouseleave = function () {
+    //             this.children[1].style.display = "none";
+    //         };
+    //     });
+
+
+
+    window.onload = function() {
+
+        //其它页面-鼠标滑动 指定DIB固定于页面头部
+        window.onscroll = function(){
+            move();
+        }
+
+    }
+
+    //划过：侧边栏（商品分类）
+    $(".sort_ul>li").each(function () {
+        this.onmouseenter = function () {
+            this.children[1].style.display = "block";
+
+        };
+        this.onmouseleave = function () {
+            this.children[1].style.display = "none";
+        };
+    });
+
+    //头部固定：move()函数
+    function move(){
+        let top_wrap = document.getElementById("top_wrap");
+        let scr = document.documentElement.scrollTop || document.body.scrollTop;
+        if(scr>1){
+            top_wrap.style.position = "fixed";
+        }else{
+            top_wrap.style.position = "";
+        }
+    }
+
+
+    // 右侧导航浮动
+    $(function() {
+        $(".backTop").click(function(){
+            $("html, body").animate({
+                scrollTop: 0
+            }, 500);
+            return false
+        });
+        $(window).scroll(function(){
+            if ($(document).scrollTop() >= 500){
+                $(".backTop").slideDown("slow");
+            }else{
+                $(".backTop").slideUp("slow");
+            };
+        });
+    });
+    var btn=document.getElementsByClassName('backTop')[0];
+    //timer需要放在最外面
+    var timer=null;
+    var istop=true;
+    //屏幕可视化高度
+    var clientHeight=document.documentElement.clientHeight;
+    //设置向上滚动时候突然往下翻的事件,注意window.onscroll
+    window.onscroll=function(){
+        if(!istop){
+            clearInterval(timer);
+        }
+        istop=false;
+        //这里需要再申明一遍high的值，否则获取不到下面已经申明的值，因为Js是从上向下执行代码
+        var high=document.documentElement.scrollTop||document.body.scrollTop;
+        if(high>=clientHeight){
+            btn.style.display='block';
+        }else{
+            btn.style.display='none';
+        }
+    }
+    console.log(clientHeight);
+    btn.onclick=function(){
+        //设置定时器，在30ms之内完成回到顶部的平滑效果
+        timer=setInterval(function() {
+            //解决各个浏览器的兼容性问题
+            //获得的这个high必须写在点击事件里面，因为js是从上往下执行代码
+            var high=document.documentElement.scrollTop||document.body.scrollTop;
+            //设置向上的速度，由快到慢，并且取负数整，这样可以为0，让定时器关闭
+            var speed=Math.floor(-high/6);
+            document.documentElement.scrollTop=document.body.scrollTop=high+speed;
+            //向上滚动突然停止的变量一开始设为true,并且放在点击事件里面
+            istop=true;
+            if(high==0){
+                clearInterval(timer);
+            }
+        },30);
+    };
+
+
+
+
+</script>

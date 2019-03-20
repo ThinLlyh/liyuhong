@@ -1,0 +1,26 @@
+@for $i from 1 through 5{
+  #ulBox li:nth-child(#{$i}){
+    margin: 5px;
+  }
+}
+//商品介绍
+.pro_right{
+    width: 592px;
+    float: right;
+    p:nth-child(1){
+      padding-top: 8px;
+      font-size: 24px;
+    }
+    p:nth-child(2){
+      font-size: 14px;
+      color: #b0b0b0;
+      padding-top: 8px;
+    }
+    p:nth-child(3){
+      font-size: 14px;
+      color: red;
+      padding-top: 8px;
+    }
+  }
+
+
